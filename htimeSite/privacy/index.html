@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="多久没见了（SeeYou）隐私政策。">
+  <meta name="color-scheme" content="light dark">
+  <title>隐私政策 · 多久没见了</title>
+  <style>
+:root {
+  color-scheme: light dark;
+  --bg: #f7f3ee;
+  --paper: #fffdf9;
+  --text: #26211e;
+  --muted: #746b65;
+  --line: #eadfd6;
+  --accent: #c85f38;
+  --accent-strong: #a94625;
+  --accent-soft: #fae9df;
+  --success-soft: #edf6ef;
+  --success-line: #70a77b;
+  --shadow: 0 20px 55px rgba(88, 53, 35, 0.09);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(236, 151, 112, 0.20), transparent 32rem),
+    linear-gradient(180deg, #fff9f3 0, var(--bg) 28rem);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--accent-strong); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.shell {
+  width: min(940px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 64px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--text);
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.mark {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #e9865e, var(--accent));
+  color: white;
+  box-shadow: 0 8px 22px rgba(200, 95, 56, 0.25);
+}
+
+.mark svg { width: 22px; height: 22px; }
+
+.tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.nav { display: flex; gap: 4px; font-size: 0.93rem; }
+
+.nav a {
+  padding: 7px 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav a[aria-current="page"] {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 650;
+}
+
+.language-switch {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+}
+
+.language-switch a {
+  min-width: 46px;
+  min-height: 32px;
+  padding: 5px 9px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.84rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.language-switch a:hover {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+article {
+  overflow: hidden;
+  border: 1px solid rgba(215, 194, 180, 0.78);
+  border-radius: 26px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 48px 54px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 3.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.lead {
+  max-width: 46rem;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.content { padding: 18px 54px 48px; }
+
+section {
+  padding: 29px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+section:last-child { padding-bottom: 0; border-bottom: 0; }
+
+h2 {
+  margin: 0 0 13px;
+  font-size: 1.34rem;
+  line-height: 1.36;
+  letter-spacing: -0.012em;
+}
+
+h3 { margin: 22px 0 8px; font-size: 1.02rem; line-height: 1.45; }
+p { margin: 0 0 14px; }
+p:last-child { margin-bottom: 0; }
+ul, ol { margin: 12px 0 16px; padding-left: 1.35rem; }
+li { margin: 7px 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.card {
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--paper) 86%, var(--accent-soft));
+}
+
+.card h2, .card h3 { margin-top: 0; }
+.card p { color: var(--muted); }
+
+.notice {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--success-line);
+  border-radius: 7px 13px 13px 7px;
+  background: var(--success-soft);
+}
+
+.contact {
+  padding: 19px;
+  border-radius: 15px;
+  background: var(--accent-soft);
+}
+
+.contact a { overflow-wrap: anywhere; font-weight: 650; }
+
+.home-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.home-link {
+  display: block;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.home-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: 0 12px 30px rgba(88, 53, 35, 0.08);
+  transform: translateY(-2px);
+}
+
+.home-link strong { display: block; margin-bottom: 6px; font-size: 1.16rem; }
+.home-link span { color: var(--muted); }
+
+footer {
+  padding: 22px 8px 0;
+  color: var(--muted);
+  font-size: 0.87rem;
+  text-align: center;
+}
+
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .topbar { align-items: flex-start; flex-direction: column; padding: 0 3px; }
+  .tools { width: 100%; justify-content: space-between; }
+  .nav { flex: 1; }
+  .nav a { text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .shell { width: min(100% - 20px, 940px); padding: 17px 0 36px; }
+  .tools { align-items: stretch; flex-direction: column; }
+  .nav { width: 100%; }
+  .nav a { flex: 1; padding-inline: 5px; }
+  .language-switch { align-self: flex-end; }
+  article { border-radius: 19px; }
+  .hero { padding: 34px 24px 29px; }
+  .content { padding: 8px 24px 35px; }
+  section { padding: 25px 0; }
+  h1 { font-size: 2.28rem; }
+  .grid, .home-links { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .home-link { transition: none; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15110f;
+    --paper: #211a17;
+    --text: #f8f1ec;
+    --muted: #c0b3aa;
+    --line: #44362f;
+    --accent: #ef8b61;
+    --accent-strong: #ffad89;
+    --accent-soft: #42251c;
+    --success-soft: #1d3325;
+    --success-line: #73b581;
+    --shadow: 0 20px 55px rgba(0, 0, 0, 0.32);
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 12% 0%, rgba(175, 74, 38, 0.22), transparent 32rem),
+      linear-gradient(180deg, #241812 0, var(--bg) 28rem);
+  }
+
+  article { border-color: #4c3b33; }
+}
+
+@media print {
+  :root { --paper: #fff; --text: #111; --muted: #555; --line: #ddd; }
+  body { background: #fff; }
+  .shell { width: 100%; padding: 0; }
+  .topbar, footer { display: none; }
+  article { border: 0; border-radius: 0; box-shadow: none; }
+  .hero, .content { padding-left: 0; padding-right: 0; }
+  a { color: inherit; }
+  section { break-inside: avoid; }
+}
+
+.language-document { scroll-margin-top: 18px; }
+.language-document + .language-document { border-top: 10px solid var(--bg); }
+
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="SeeYou">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 27.2C8.2 22.5 4 18.3 4 12.7A6.7 6.7 0 0 1 16 8.6a6.7 6.7 0 0 1 12 4.1c0 5.6-4.2 9.8-12 14.5Z"/></svg>
+        </span>
+        <span>多久没见了 · SeeYou</span>
+      </a>
+      <div class="tools">
+        <nav class="nav" aria-label="网站导航">
+          <a href="../support/">
+            <span>技术支持 / Support</span>
+          </a>
+          <a href="../privacy/" aria-current="page">
+            <span>隐私政策 / Privacy</span>
+          </a>
+        </nav>
+        <nav class="language-switch" aria-label="语言 / Language">
+          <a href="#zh-Hans" lang="zh-Hans">中文</a>
+          <a href="#en" lang="en">EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <article>
+      <div id="zh-Hans" class="language-document" lang="zh-Hans">
+        <header class="hero">
+          <p class="eyebrow">法律文件</p>
+          <h1>隐私政策</h1>
+          <p class="lead">本政策说明“多久没见了”（英文名 SeeYou，以下简称“本 App”）如何处理与你有关的资料。</p>
+          <p class="meta"><span>更新与生效日期：2026 年 10 月 10 日</span><span>版本：2026-10-10.1</span></p>
+        </header>
+
+        <main class="content">
+          <section>
+            <h2>1. 适用范围与开发者身份</h2>
+            <p>本政策适用于你使用本 App、桌面小组件、应用内购买、系统分享及联系支持时发生的资料处理。</p>
+            <p>本 App 的开发者或销售者身份，以 App Store 产品页展示的信息为准。隐私与支持联系方式见本政策末尾。</p>
+            <p>本 App 以本地处理为核心，不设用户账号，也不提供由开发者运营的云端同步。人物资料、见面记录、卡片编辑与图片生成默认在你的设备上完成，不会由本 App 自动上传给开发者。</p>
+          </section>
+
+          <section>
+            <h2>2. 本 App 在设备上使用的资料</h2>
+            <p>根据你实际使用的功能，本 App 可能在设备上保存或处理：</p>
+            <ul>
+              <li>人物昵称、头像、关系、未见原因及可选手机号；</li>
+              <li>见面日期与时间、记录创建时间、人物排序及提醒设置；</li>
+              <li>你输入的信片标题、正文、活动、地点，以及你主动选择用于当前卡片的照片；</li>
+              <li>语言、外观、小组件隐私、通知总开关和其他功能偏好；</li>
+              <li>协议版本、同意时间与撤回状态；</li>
+              <li>App Store 商品信息、交易验证结果与购买权益状态。</li>
+            </ul>
+            <p>手机号在普通界面中会隐藏中间四位，但完整号码仍保存在本地，以便编辑或在你主动选择时预填到 Apple 的信息编辑页面。用于信片的照片会在本地缩放和重新绘制；生成的图片不保留原始照片元数据。</p>
+            <p>当前版本不包含广告 SDK、跨 App 跟踪或第三方分析 SDK，不请求精确位置、麦克风、相机或通讯录资料。</p>
+          </section>
+
+          <section>
+            <h2>3. 权限与系统功能</h2>
+            <ul>
+              <li><strong>照片：</strong>只有在你使用系统照片选择器挑选头像或卡片照片时，本 App 才能取得你明确选择的项目。保存生成图片时，iOS 可能根据系统规则请求相应权限。</li>
+              <li><strong>通知：</strong>在你启用操作通知或人物提醒时，本 App 会请求通知权限，并通过 iOS 安排本地通知。通知内容可能按你的系统设置显示在锁定屏幕或通知中心。</li>
+              <li><strong>信息：</strong>当你主动选择通过短信或 iMessage 分享时，本 App 会把所选人物的号码、卡片文案和图片交给 Apple 原生信息编辑页面。你可以检查、修改、取消或亲自发送；本 App 不会自动发送消息。</li>
+              <li><strong>桌面小组件：</strong>主 App 与小组件通过同一 App Group 本地容器读取必要的人物、头像、见面时间和设置。开启“小组件隐私”后，小组件会隐藏人物资料。</li>
+              <li><strong>地区与语言：</strong>本 App 可读取系统语言和地区，用于界面本地化、日期格式和手机号国家或地区区号建议。</li>
+            </ul>
+            <p>你可以在 iPhone 系统设置中调整权限，也可以在本 App 设置中关闭全部通知或小组件人物展示。</p>
+          </section>
+
+          <section>
+            <h2>4. 处理目的与依据</h2>
+            <p>上述本地资料用于创建和展示人物、计算未见时长、保存见面历史、安排提醒、配置小组件、生成回忆时间线和信片、预填由你发起的信息，以及恢复界面与功能偏好。</p>
+            <p>购买权益用于判断高级功能是否解锁。协议记录用于确认当前是否可以继续提供服务。上述处理用于履行你主动请求的功能；适用法律要求同意时，以你的同意为依据。</p>
+            <p>本 App 不会使用这些资料建立广告画像，也不会进行产生法律或类似重大影响的自动化决策。</p>
+          </section>
+
+          <section>
+            <h2>5. 分享、接收方与第三方服务</h2>
+            <p>本 App 不会自动出售、出租或上传人物资料和见面记录，也不会将其用于定向广告。</p>
+            <p>只有当你主动使用系统分享、保存到照片、发送短信或 iMessage、导出日历邀请等功能时，你选择的内容才会交给 Apple 服务、通信运营商、接收人或你选择的第三方 App。此后的处理受相应服务、接收方及其隐私规则约束。</p>
+            <p>短信、彩信、漫游或移动数据费用可能由你的运营商根据套餐收取。本 App 不收取或控制这些运营商费用。</p>
+            <p>App Store 下载、年费自动续订、永久购买及恢复购买由 Apple 提供。Apple 处理 Apple 账户、付款和商店资料；本 App 读取商品价格、交易验证结果和权益状态，但不会取得支付卡号。</p>
+            <p>设备备份、iCloud 照片或其他 Apple 服务是否处理相关资料，取决于你的设备、Apple 账户和系统设置，并受 Apple 的条款和隐私政策约束。</p>
+          </section>
+
+          <section>
+            <h2>6. 联系邮件</h2>
+            <p>只有当你主动发送支持或隐私邮件时，开发者才会收到你的邮件地址、邮件头、正文和你自行添加的附件。这些资料仅用于回复请求、排查问题、维护安全、处理权利请求、遵守法律义务或解决争议。</p>
+            <p>支持邮箱当前使用 Google 提供的邮件服务。邮件发送后，Google 和邮件传输服务商可能依其规则处理资料，并可能在你所在国家或地区以外处理。开发者不会出售联系邮件中的资料。</p>
+            <p>联系支持时，请勿发送密码、完整手机号、私人照片、完整人物记录或与问题无关的敏感资料。</p>
+          </section>
+
+          <section>
+            <h2>7. 保存、删除与撤回同意</h2>
+            <p>人物资料、见面记录、设置和协议状态会保存在本地，直到你在 App 中删除、清空资料或卸载 App。iOS 的系统备份可能按你的设置保留副本；已经保存到照片或主动分享给其他接收方的内容需要另行删除。</p>
+            <p>删除人物时，会同时删除该人物在本 App 中的相关见面记录并取消相应提醒。使用“清空全部资料”可以删除本 App 中的全部人物及见面记录。Apple 保存的购买记录和权益由 Apple 管理，不会因清空本地资料而删除。</p>
+            <p>你可以撤回对协议的同意。撤回后，核心功能会暂停，待处理通知会停止，小组件会隐藏人物资料；本地资料不会因此自动删除。重新同意后可恢复使用。撤回不影响撤回前已经合法完成的处理。</p>
+            <p>支持邮件只在答复、解决请求、维护安全、处理争议或履行法律义务所需的合理期限内保存，之后在合理可行时删除或匿名化。</p>
+          </section>
+
+          <section>
+            <h2>8. 安全措施</h2>
+            <p>本 App 使用 iOS 沙盒、App Group 权限边界、本地数据库、系统权限控制、文件保护和本地图片处理来降低风险。任何设备、存储或传输方式都无法保证绝对安全。</p>
+            <p>请保护设备密码，在发送信片、时间线、日历邀请或支持邮件前检查内容，并谨慎选择接收人。设备解锁后可访问的内容、系统备份以及分享后的副本由你和相应服务共同管理。</p>
+          </section>
+
+          <section>
+            <h2>9. 你的选择与权利</h2>
+            <p>你可以在本 App 中查看、修改或删除人物与见面记录，调整手机号、照片、提醒、语言和隐私设置，撤回同意，并清空人物资料。开发者通常无法访问只保存在你设备上的资料，因此这类资料需要由你在设备上直接管理。</p>
+            <p>对于开发者实际持有的支持邮件，你可以联系我们，依适用法律请求访问、更正、删除、限制处理、反对处理、取得副本或撤回同意。为保护资料，开发者只会在合理必要范围内核实身份，并在适用法律规定的期限内回应。</p>
+            <p>你也可以向所在地的个人信息保护、数据保护、消费者保护或其他有权机关提出投诉。</p>
+          </section>
+
+          <section>
+            <h2>10. 未成年人使用</h2>
+            <p>本 App 并非专门面向儿童，不要求提供年龄或身份证件，也不会通过 App 自动向开发者收集儿童资料。未成年人应在监护人指导下使用，并谨慎填写或分享自己及他人的姓名、照片、手机号和关系信息。</p>
+            <p>监护人如认为未成年人通过联系邮箱提交了个人资料，可联系我们核实并申请删除。</p>
+          </section>
+
+          <section>
+            <h2>11. 政策更新</h2>
+            <p>如果功能、资料用途、远程服务或接收方发生重要变化，本政策会更新日期与版本；适用法律要求时，会另行提示或重新取得同意。仅增加翻译或切换界面语言不会增加资料收集。</p>
+          </section>
+
+          <section>
+            <h2>12. 联系我们</h2>
+            <div class="contact">
+              <p>开发者或销售者身份：以 App Store 产品页公示信息为准。</p>
+              <p>隐私与支持邮箱：<a href="mailto:secsnowteam@gmail.com">secsnowteam@gmail.com</a></p>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <div id="en" class="language-document" lang="en">
+        <header class="hero">
+          <p class="eyebrow">Legal</p>
+          <h1>Privacy Policy</h1>
+          <p class="lead">This Policy explains how “SeeYou” (the “App”) handles information relating to you.</p>
+          <p class="meta"><span>Updated and effective: October 10, 2026</span><span>Version 2026-10-10.1</span></p>
+        </header>
+
+        <main class="content">
+          <section>
+            <h2>1. Scope and Developer Identity</h2>
+            <p>This Policy applies when you use the App, its Home Screen widgets, in-app purchases, system sharing and support contact.</p>
+            <p>The developer or seller is the party identified on the App Store product page. Privacy and support contact information appears at the end of this Policy.</p>
+            <p>The App is built around local processing. It has no user account or developer-operated cloud sync. People, meeting records, card editing and image creation are processed on your device by default and are not automatically uploaded to the developer.</p>
+          </section>
+
+          <section>
+            <h2>2. Data Used on Your Device</h2>
+            <p>Depending on the features you use, the App may store or process on your device:</p>
+            <ul>
+              <li>Names, avatars, relationships, reasons for time apart and optional phone numbers;</li>
+              <li>Meeting dates and times, record creation times, people ordering and reminder settings;</li>
+              <li>Card titles, messages, activities and locations you enter, and photos you choose for the current card;</li>
+              <li>Language, appearance, widget privacy, the global notification switch and other feature preferences;</li>
+              <li>The agreement version, agreement time and withdrawal state; and</li>
+              <li>App Store product information, transaction verification results and purchase entitlement status.</li>
+            </ul>
+            <p>The middle four digits of a phone number are masked in ordinary displays, but the complete number remains stored locally so it can be edited or pre-filled into Apple’s message composer when you request it. Card photos are resized and redrawn locally; generated images do not retain the original photo metadata.</p>
+            <p>The current version contains no advertising SDK, cross-app tracking or third-party analytics SDK. It does not request precise location, microphone, camera or Contacts data.</p>
+          </section>
+
+          <section>
+            <h2>3. Permissions and System Features</h2>
+            <ul>
+              <li><strong>Photos:</strong> the App receives only items you explicitly select through the system photo picker for an avatar or card. iOS may request the relevant permission under its rules when you save a generated image.</li>
+              <li><strong>Notifications:</strong> when you enable activity notifications or a person reminder, the App requests notification permission and schedules local notifications through iOS. Content may appear on the Lock Screen or in Notification Center according to your system settings.</li>
+              <li><strong>Messages:</strong> when you choose SMS or iMessage sharing, the App provides the selected person’s number, the card message and image to Apple’s native message composer. You can review, edit, cancel or personally send it. The App never sends a message automatically.</li>
+              <li><strong>Home Screen Widgets:</strong> the main App and widget read necessary person, avatar, meeting-time and settings data from the same local App Group container. Enabling Widget Privacy hides person details in widgets.</li>
+              <li><strong>Region and Language:</strong> the App may read system language and region for localization, date formats and phone country or region code suggestions.</li>
+            </ul>
+            <p>You can adjust permissions in iPhone Settings and turn off all notifications or widget person details in the App’s Settings.</p>
+          </section>
+
+          <section>
+            <h2>4. Purposes and Legal Bases</h2>
+            <p>Local data is used to create and display people, calculate time apart, preserve meeting history, schedule reminders, configure widgets, generate memory timelines and cards, pre-fill a message you initiate, and restore interface and feature preferences.</p>
+            <p>Purchase entitlements determine whether Premium features are unlocked. Agreement records determine whether the service can currently be provided. Processing provides features you actively request and, where applicable law requires it, is based on your consent.</p>
+            <p>The App does not use this data to build advertising profiles or make automated decisions that have legal or similarly significant effects.</p>
+          </section>
+
+          <section>
+            <h2>5. Sharing, Recipients and Third-Party Services</h2>
+            <p>The App does not automatically sell, rent or upload people or meeting records, and it does not use them for targeted advertising.</p>
+            <p>Only when you actively use system sharing, save to Photos, send SMS or iMessage, or export a calendar invitation is the selected content provided to Apple services, a carrier, the recipient or a third-party app you choose. Further processing is governed by those services, recipients and their privacy terms.</p>
+            <p>Your carrier may charge for SMS, MMS, roaming or mobile data under your plan. The App neither collects nor controls carrier charges.</p>
+            <p>Apple provides App Store downloads, auto-renewing yearly subscriptions, lifetime purchases and purchase restoration. Apple processes Apple Account, payment and storefront data. The App reads product prices, transaction verification results and entitlement status, but does not receive payment-card numbers.</p>
+            <p>Whether device backups, iCloud Photos or other Apple services process related data depends on your device, Apple Account and system settings and is governed by Apple’s terms and privacy policies.</p>
+          </section>
+
+          <section>
+            <h2>6. Contact Emails</h2>
+            <p>Only when you choose to send a support or privacy email does the developer receive your email address, headers, message and attachments you add. This information is used only to respond, troubleshoot, maintain security, handle rights requests, comply with legal duties or resolve disputes.</p>
+            <p>The support mailbox currently uses email services provided by Google. After you send an email, Google and mail-routing providers may process it under their terms, potentially in countries or regions outside your own. The developer does not sell information contained in contact emails.</p>
+            <p>Do not send passwords, complete phone numbers, private photos, full people records or unrelated sensitive information when contacting support.</p>
+          </section>
+
+          <section>
+            <h2>7. Retention, Deletion and Withdrawal</h2>
+            <p>People, meeting records, settings and agreement state remain locally until you delete or clear data in the App or uninstall it. iOS system backups may retain a copy according to your settings. Content already saved to Photos or shared with another recipient must be deleted separately.</p>
+            <p>Deleting a person also deletes that person’s related meeting records in the App and cancels the corresponding reminder. Clear All Data removes all people and meeting records from the App. Purchase records and entitlements held by Apple are managed by Apple and are not removed when local data is cleared.</p>
+            <p>You can withdraw agreement consent. Core features are then paused, pending notifications stop and widgets hide person details until you agree again. Withdrawal does not automatically delete local data and does not affect processing lawfully completed before withdrawal.</p>
+            <p>Support emails are kept only for as long as reasonably necessary to respond and resolve the request, maintain security, handle disputes or meet legal obligations. They are then deleted or anonymized where reasonably practicable.</p>
+          </section>
+
+          <section>
+            <h2>8. Security</h2>
+            <p>The App uses iOS sandboxing, App Group boundaries, a local database, system permission controls, file protection and local image processing to reduce risk. No device, storage method or transmission system can be guaranteed completely secure.</p>
+            <p>Protect your device passcode, review cards, timelines, calendar invitations and support emails before sending, and choose recipients carefully. You and the relevant services manage content accessible after device unlock, system backups and copies created through sharing.</p>
+          </section>
+
+          <section>
+            <h2>9. Your Choices and Rights</h2>
+            <p>You can view, edit or delete people and meetings in the App; adjust phone numbers, photos, reminders, language and privacy preferences; withdraw consent; and clear people data. The developer normally cannot access data stored only on your device, so you manage that data directly on the device.</p>
+            <p>For support emails actually held by the developer, you may contact us to exercise rights available under applicable law, which may include access, correction, deletion, restriction, objection, a copy or withdrawal of consent. To protect information, identity is verified only to the extent reasonably necessary, and requests are answered within applicable legal periods.</p>
+            <p>You may also complain to your local privacy, data-protection, consumer-protection or other competent authority.</p>
+          </section>
+
+          <section>
+            <h2>10. Use by Minors</h2>
+            <p>The App is not specifically directed to children, does not request age or identity documents, and does not automatically collect children’s data for the developer. Minors should use it with a guardian’s guidance and take care when entering or sharing their own or another person’s name, photo, phone number or relationship information.</p>
+            <p>A guardian who believes a minor submitted personal information through the contact email may contact us to verify and request deletion.</p>
+          </section>
+
+          <section>
+            <h2>11. Policy Updates</h2>
+            <p>If features, data uses, remote services or recipients change materially, this Policy will be updated with a new date and version. Notice or renewed consent will be provided where required by applicable law. Adding translations or changing the interface language alone does not increase data collection.</p>
+          </section>
+
+          <section>
+            <h2>12. Contact Us</h2>
+            <div class="contact">
+              <p>Developer or seller identity: as displayed on the App Store product page.</p>
+              <p>Privacy and support email: <a href="mailto:secsnowteam@gmail.com">secsnowteam@gmail.com</a></p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </article>
+
+    <footer>
+      © 2026 SeeYou ·
+      <a href="../support/">
+        <span>技术支持 / Support</span>
+      </a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="多久没见了（SeeYou）技术支持、使用帮助与联系反馈。">
+  <meta name="color-scheme" content="light dark">
+  <title>技术支持 · 多久没见了</title>
+  <style>
+:root {
+  color-scheme: light dark;
+  --bg: #f7f3ee;
+  --paper: #fffdf9;
+  --text: #26211e;
+  --muted: #746b65;
+  --line: #eadfd6;
+  --accent: #c85f38;
+  --accent-strong: #a94625;
+  --accent-soft: #fae9df;
+  --success-soft: #edf6ef;
+  --success-line: #70a77b;
+  --shadow: 0 20px 55px rgba(88, 53, 35, 0.09);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(236, 151, 112, 0.20), transparent 32rem),
+    linear-gradient(180deg, #fff9f3 0, var(--bg) 28rem);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--accent-strong); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.shell {
+  width: min(940px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 64px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--text);
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.mark {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #e9865e, var(--accent));
+  color: white;
+  box-shadow: 0 8px 22px rgba(200, 95, 56, 0.25);
+}
+
+.mark svg { width: 22px; height: 22px; }
+
+.tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.nav { display: flex; gap: 4px; font-size: 0.93rem; }
+
+.nav a {
+  padding: 7px 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav a[aria-current="page"] {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 650;
+}
+
+.language-switch {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+}
+
+.language-switch a {
+  min-width: 46px;
+  min-height: 32px;
+  padding: 5px 9px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.84rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.language-switch a:hover {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+article {
+  overflow: hidden;
+  border: 1px solid rgba(215, 194, 180, 0.78);
+  border-radius: 26px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 48px 54px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 3.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.lead {
+  max-width: 46rem;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.content { padding: 18px 54px 48px; }
+
+section {
+  padding: 29px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+section:last-child { padding-bottom: 0; border-bottom: 0; }
+
+h2 {
+  margin: 0 0 13px;
+  font-size: 1.34rem;
+  line-height: 1.36;
+  letter-spacing: -0.012em;
+}
+
+h3 { margin: 22px 0 8px; font-size: 1.02rem; line-height: 1.45; }
+p { margin: 0 0 14px; }
+p:last-child { margin-bottom: 0; }
+ul, ol { margin: 12px 0 16px; padding-left: 1.35rem; }
+li { margin: 7px 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.card {
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--paper) 86%, var(--accent-soft));
+}
+
+.card h2, .card h3 { margin-top: 0; }
+.card p { color: var(--muted); }
+
+.notice {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--success-line);
+  border-radius: 7px 13px 13px 7px;
+  background: var(--success-soft);
+}
+
+.contact {
+  padding: 19px;
+  border-radius: 15px;
+  background: var(--accent-soft);
+}
+
+.contact a { overflow-wrap: anywhere; font-weight: 650; }
+
+.home-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.home-link {
+  display: block;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.home-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: 0 12px 30px rgba(88, 53, 35, 0.08);
+  transform: translateY(-2px);
+}
+
+.home-link strong { display: block; margin-bottom: 6px; font-size: 1.16rem; }
+.home-link span { color: var(--muted); }
+
+footer {
+  padding: 22px 8px 0;
+  color: var(--muted);
+  font-size: 0.87rem;
+  text-align: center;
+}
+
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .topbar { align-items: flex-start; flex-direction: column; padding: 0 3px; }
+  .tools { width: 100%; justify-content: space-between; }
+  .nav { flex: 1; }
+  .nav a { text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .shell { width: min(100% - 20px, 940px); padding: 17px 0 36px; }
+  .tools { align-items: stretch; flex-direction: column; }
+  .nav { width: 100%; }
+  .nav a { flex: 1; padding-inline: 5px; }
+  .language-switch { align-self: flex-end; }
+  article { border-radius: 19px; }
+  .hero { padding: 34px 24px 29px; }
+  .content { padding: 8px 24px 35px; }
+  section { padding: 25px 0; }
+  h1 { font-size: 2.28rem; }
+  .grid, .home-links { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .home-link { transition: none; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15110f;
+    --paper: #211a17;
+    --text: #f8f1ec;
+    --muted: #c0b3aa;
+    --line: #44362f;
+    --accent: #ef8b61;
+    --accent-strong: #ffad89;
+    --accent-soft: #42251c;
+    --success-soft: #1d3325;
+    --success-line: #73b581;
+    --shadow: 0 20px 55px rgba(0, 0, 0, 0.32);
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 12% 0%, rgba(175, 74, 38, 0.22), transparent 32rem),
+      linear-gradient(180deg, #241812 0, var(--bg) 28rem);
+  }
+
+  article { border-color: #4c3b33; }
+}
+
+@media print {
+  :root { --paper: #fff; --text: #111; --muted: #555; --line: #ddd; }
+  body { background: #fff; }
+  .shell { width: 100%; padding: 0; }
+  .topbar, footer { display: none; }
+  article { border: 0; border-radius: 0; box-shadow: none; }
+  .hero, .content { padding-left: 0; padding-right: 0; }
+  a { color: inherit; }
+  section { break-inside: avoid; }
+}
+
+.language-document { scroll-margin-top: 18px; }
+.language-document + .language-document { border-top: 10px solid var(--bg); }
+
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="SeeYou">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 27.2C8.2 22.5 4 18.3 4 12.7A6.7 6.7 0 0 1 16 8.6a6.7 6.7 0 0 1 12 4.1c0 5.6-4.2 9.8-12 14.5Z"/></svg>
+        </span>
+        <span>多久没见了 · SeeYou</span>
+      </a>
+      <div class="tools">
+        <nav class="nav" aria-label="网站导航">
+          <a href="../support/" aria-current="page">
+            <span>技术支持 / Support</span>
+          </a>
+          <a href="../privacy/">
+            <span>隐私政策 / Privacy</span>
+          </a>
+        </nav>
+        <nav class="language-switch" aria-label="语言 / Language">
+          <a href="#zh-Hans" lang="zh-Hans">中文</a>
+          <a href="#en" lang="en">EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <article>
+      <div id="zh-Hans" class="language-document" lang="zh-Hans">
+        <header class="hero">
+          <p class="eyebrow">技术支持</p>
+          <h1>使用“多久没见了”</h1>
+          <p class="lead">记录重要的人与每次相聚，把提醒、回忆和想念留在合适的位置。</p>
+          <p class="meta"><span>适用于 iOS 17.0 及以上版本</span><span>App：多久没见了（SeeYou）</span></p>
+        </header>
+
+        <main class="content">
+          <section>
+            <h2>快速开始</h2>
+            <div class="grid">
+              <div class="card">
+                <h3>添加重要的人</h3>
+                <p>轻点首页右上角的加号，填写昵称和关系。头像、手机号、未见原因、上次见面时间与提醒均可按需设置。</p>
+              </div>
+              <div class="card">
+                <h3>记录一次见面</h3>
+                <p>轻点人物卡片上的爱心即可记录当前见面。当天再次轻点可撤回；历史见面可在人物详情中补录、修改或删除。</p>
+              </div>
+              <div class="card">
+                <h3>制作信片</h3>
+                <p>在“信片”中选择类型、模板和人物，编辑文案或照片，然后导出图片，或在支持的 iPhone 上通过“信息”发送。</p>
+              </div>
+              <div class="card">
+                <h3>查看回忆</h3>
+                <p>“回忆”按时间展示所有相聚。高级会员可将时间线生成图片，保存或通过系统分享菜单发送。</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>小组件与通知</h2>
+            <h3>添加或更换小组件人物</h3>
+            <ol>
+              <li>在主屏幕长按空白处，添加“多久没见了”小组件。</li>
+              <li>长按已添加的小组件并选择“编辑小组件”。</li>
+              <li>选择希望展示的人物；中尺寸可根据系统提供的配置展示多人。</li>
+            </ol>
+            <p>人物、头像或隐私设置变更后，App 会请求刷新小组件。实际刷新时机由 iOS 的 WidgetKit 决定，因此可能不会在整分钟立即变化。</p>
+            <h3>收不到提醒或操作通知</h3>
+            <p>请同时检查 App 内“设置 → 允许通知”和 iPhone“设置 → 通知 → 多久没见了”。人物提醒还需要在该人物的提醒页面单独开启。提醒由 iOS 安排，系统不保证在所有状态下精确送达。</p>
+          </section>
+
+          <section>
+            <h2>信片与短信 / iMessage</h2>
+            <ul>
+              <li>导出分享无需填写手机号；系统分享菜单由你选择接收方和应用。</li>
+              <li>通过“信息”发送属于高级会员功能，需要人物资料中有有效手机号，且设备支持文字与图片信息。</li>
+              <li>App 只会打开 Apple 原生信息编辑页面并预填接收人、文字和图片。你需要亲自确认发送，App 不会自动发送。</li>
+              <li>短信、彩信、漫游或移动数据产生的费用由你的运营商收取，具体以你的套餐和运营商规则为准。</li>
+              <li>App 会按设备地区提供常用国家或地区区号，并在界面中隐藏手机号中间四位；编辑和发送时仍会使用你保存的完整号码。</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>高级会员与购买</h2>
+            <p>高级会员提供年费自动续订和永久解锁两种方式。实际价格和币种直接来自你的 App Store 账户所属商店，不由 App 固定填写。</p>
+            <ul>
+              <li><strong>年费会员：</strong>在当前订阅期内解锁高级功能。可在 iPhone“设置 → Apple 账户 → 订阅”中管理或取消；取消后可使用至当前周期结束。</li>
+              <li><strong>永久会员：</strong>一次购买，长期解锁当前提供的高级功能，不会自动续费。</li>
+              <li><strong>恢复购买：</strong>使用原购买 Apple 账户，在会员页面选择“恢复购买”。App 不会读取你的支付卡信息。</li>
+            </ul>
+            <p>如果价格显示的币种与所在地不符，请检查用于 App Store 的 Apple 账户国家或地区和商店状态。</p>
+          </section>
+
+          <section>
+            <h2>资料与隐私常见问题</h2>
+            <h3>资料保存在哪里？</h3>
+            <p>人物、头像、手机号、见面记录和设置主要保存在本机及 App 与小组件共用的本地容器中。App 不提供账号或开发者自建云同步。设备系统备份是否包含这些资料，取决于你的 Apple 设备和备份设置。</p>
+            <h3>如何删除资料？</h3>
+            <p>你可以删除单个人物或见面记录，也可以在 App 设置中清空全部人物资料和见面记录。已经保存到照片、通过信息发出或分享至其他服务的内容，需要在相应位置另行管理。</p>
+            <h3>撤回协议同意后会怎样？</h3>
+            <p>撤回后 App 会暂停核心功能并停止通知，重新同意后可恢复使用。撤回同意不会自动删除本地资料；如需删除，请另行使用清空资料功能。</p>
+          </section>
+
+          <section>
+            <h2>联系与反馈</h2>
+            <div class="contact">
+              <p>如需帮助，请发送邮件至 <a href="mailto:secsnowteam@gmail.com">secsnowteam@gmail.com</a>。</p>
+              <p>建议写明 App 版本、iPhone 型号、iOS 版本、问题出现的步骤和看到的提示。请勿发送密码、完整手机号、私人照片或无关的敏感资料。</p>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <div id="en" class="language-document" lang="en">
+        <header class="hero">
+          <p class="eyebrow">Technical Support</p>
+          <h1>Using SeeYou</h1>
+          <p class="lead">Remember important people and each time you meet, with gentle reminders, memories and cards.</p>
+          <p class="meta"><span>Requires iOS 17.0 or later</span><span>App: SeeYou</span></p>
+        </header>
+
+        <main class="content">
+          <section>
+            <h2>Get Started</h2>
+            <div class="grid">
+              <div class="card">
+                <h3>Add Someone Important</h3>
+                <p>Tap the plus button at the top right of Home, then enter a name and relationship. An avatar, phone number, reason for time apart, last meeting time and reminder are optional.</p>
+              </div>
+              <div class="card">
+                <h3>Record a Meeting</h3>
+                <p>Tap the heart on a person card to record the current meeting. Tap it again on the same day to undo. Past meetings can be added, edited or deleted from the person detail page.</p>
+              </div>
+              <div class="card">
+                <h3>Create a Card</h3>
+                <p>In Cards, choose a type, template and person, edit the message or photo, then export the image or send it through Messages on a supported iPhone.</p>
+              </div>
+              <div class="card">
+                <h3>View Memories</h3>
+                <p>Memories shows every meeting on a timeline. Premium members can turn the timeline into images to save or share through the system share sheet.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Widgets and Notifications</h2>
+            <h3>Add or Change a Widget Person</h3>
+            <ol>
+              <li>Touch and hold an empty area of the Home Screen, then add the SeeYou widget.</li>
+              <li>Touch and hold the widget and select Edit Widget.</li>
+              <li>Choose the person to display. Where available, the medium widget can be configured for multiple people.</li>
+            </ol>
+            <p>After a person, avatar or privacy setting changes, the app requests a widget reload. WidgetKit controls the actual refresh time, so the displayed duration may not change at the exact minute.</p>
+            <h3>Reminders or Activity Notifications Do Not Arrive</h3>
+            <p>Check both “Settings → Allow Notifications” in SeeYou and “Settings → Notifications → SeeYou” on your iPhone. A person reminder must also be enabled for that person. iOS schedules delivery and does not guarantee an exact delivery time in every device state.</p>
+          </section>
+
+          <section>
+            <h2>Cards and SMS / iMessage</h2>
+            <ul>
+              <li>No phone number is required to export a card. You choose the destination and recipient in the system share sheet.</li>
+              <li>Sending through Messages is a Premium feature. The selected person needs a valid phone number and the device must support text and image messages.</li>
+              <li>SeeYou only opens Apple’s native message composer and pre-fills the recipient, text and image. You review and send the message yourself; the app never sends it automatically.</li>
+              <li>Your carrier may charge for SMS, MMS, roaming or mobile data under your plan and its terms.</li>
+              <li>The app suggests a common country or region code from the device region and masks the middle four digits on display. The complete number you saved is still used while editing and sending.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Premium and Purchases</h2>
+            <p>Premium is available as an auto-renewing yearly subscription or a lifetime unlock. Prices and currencies come directly from the storefront associated with your App Store account and are not hard-coded by SeeYou.</p>
+            <ul>
+              <li><strong>Yearly:</strong> unlocks Premium during the current subscription period. Manage or cancel it under “iPhone Settings → Apple Account → Subscriptions.” After cancellation, access continues until the period ends.</li>
+              <li><strong>Lifetime:</strong> a one-time purchase that unlocks the Premium features currently offered and does not auto-renew.</li>
+              <li><strong>Restore Purchases:</strong> use the Apple Account that made the purchase, then select Restore Purchases on the Premium page. SeeYou does not receive your payment-card details.</li>
+            </ul>
+            <p>If the displayed currency does not match your location, check the country or region and storefront status of the Apple Account used for the App Store.</p>
+          </section>
+
+          <section>
+            <h2>Data and Privacy FAQ</h2>
+            <h3>Where Is My Data Stored?</h3>
+            <p>People, avatars, phone numbers, meeting records and settings are primarily stored on your device in a local container shared by the app and its widget. SeeYou has no account system or developer-operated cloud sync. Whether a system backup includes this data depends on your Apple device and backup settings.</p>
+            <h3>How Do I Delete Data?</h3>
+            <p>You can delete an individual person or meeting, or clear all people and meeting records in SeeYou Settings. Content already saved to Photos, sent through Messages or shared with another service must be managed separately.</p>
+            <h3>What Happens If I Withdraw Consent?</h3>
+            <p>Core features and notifications are paused until you agree again. Withdrawing consent does not automatically delete local data; use the separate clear-data control if you want to remove it.</p>
+          </section>
+
+          <section>
+            <h2>Contact Support</h2>
+            <div class="contact">
+              <p>Email <a href="mailto:secsnowteam@gmail.com">secsnowteam@gmail.com</a> for help.</p>
+              <p>Please include the app version, iPhone model, iOS version, steps that reproduce the issue and any displayed message. Do not send passwords, complete phone numbers, private photos or unrelated sensitive information.</p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </article>
+
+    <footer>
+      © 2026 SeeYou ·
+      <a href="../privacy/">
+        <span>隐私政策 / Privacy Policy</span>
+      </a>
+    </footer>
+  </div>
+</body>
+</html>
