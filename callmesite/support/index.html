@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="有人叫我（CallMe）技术支持 / CallMe Support">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; script-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>技术支持 · 有人叫我 / CallMe Support</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f2f6fc; --paper: #ffffff; --text: #17243b; --muted: #53657b;
+  --line: #dce5f1; --accent: #007aff; --strong: #0756b0; --soft: #e9f2ff;
+  --shadow: 0 20px 55px rgba(24, 67, 124, .08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--text);
+  background: radial-gradient(circle at 12% 0%, #dcecff, transparent 32rem), var(--bg);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; overflow-wrap: anywhere;
+}
+a { color: var(--strong); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.shell { width: min(940px, calc(100% - 32px)); margin: auto; padding: 36px 0 56px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+.brand { display: flex; align-items: center; gap: 11px; color: var(--text); font-weight: 700; text-decoration: none; }
+.brand img { width: 42px; height: 42px; flex: 0 0 auto; border-radius: 12px; }
+.tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.nav, .language-switch { display: flex; gap: 4px; }
+.nav a, .language-switch a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 11px; border-radius: 10px; text-decoration: none; }
+.nav a { color: var(--muted); font-size: .9rem; }
+.nav a[aria-current="page"], .nav a:hover { color: var(--strong); background: var(--soft); }
+.language-switch { border: 1px solid var(--line); border-radius: 11px; padding: 2px; background: var(--paper); }
+.language-switch a { min-width: 48px; font-size: .9rem; }
+.language-switch a:hover { background: var(--soft); }
+main { border: 1px solid var(--line); border-radius: 26px; background: var(--paper); box-shadow: var(--shadow); overflow: hidden; }
+.language-document { scroll-margin-top: 18px; }
+.language-document + .language-document { border-top: 10px solid var(--bg); }
+.hero { padding: 44px 54px 32px; border-bottom: 1px solid var(--line); }
+.eyebrow { margin: 0 0 8px; color: var(--strong); font-size: .85rem; font-weight: 700; }
+h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.3rem); line-height: 1.22; letter-spacing: -.03em; }
+.lead { margin: 16px 0 0; color: var(--muted); font-size: 1.02rem; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 18px 0 0; color: var(--muted); font-size: .9rem; }
+.content { padding: 8px 54px 42px; }
+section { padding: 26px 0; border-bottom: 1px solid var(--line); }
+section:last-child { border-bottom: 0; padding-bottom: 0; }
+h2 { margin: 0 0 12px; font-size: 1.3rem; line-height: 1.4; }
+p { margin: 0 0 14px; }
+p:last-child { margin-bottom: 0; }
+.contact { background: var(--soft); padding: 20px; border-radius: 16px; }
+.contact a { font-weight: 650; }
+.page-link { display: inline-block; margin-top: 16px; }
+footer { margin: 24px 4px 0; color: var(--muted); font-size: .87rem; }
+.skip { position: absolute; left: 12px; top: -100px; padding: 10px; background: var(--paper); z-index: 1; }
+.skip:focus { top: 10px; }
+@media (max-width: 760px) {
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .tools { width: 100%; justify-content: space-between; }
+}
+@media (max-width: 480px) {
+  .shell { width: calc(100% - 20px); padding: 20px 0 32px; }
+  .tools { gap: 8px; }
+  .nav a { padding: 8px; font-size: .82rem; }
+  .language-switch a { min-width: 42px; padding: 8px; }
+  main { border-radius: 19px; }
+  .hero { padding: 32px 24px 25px; }
+  .content { padding: 4px 24px 30px; }
+  h2 { font-size: 1.18rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0e1725; --paper: #152238; --text: #edf3fd; --muted: #b2c0d6; --line: #30415a; --accent: #69adff; --strong: #99c7ff; --soft: #213c60; --shadow: 0 20px 55px rgba(0,0,0,.25); }
+  body { background: radial-gradient(circle at 12% 0%, #1b3658, transparent 32rem), var(--bg); }
+}
+@media print {
+  :root { --paper: #fff; --text: #111; --muted: #444; --line: #ddd; --bg: #fff; --soft: #f4f4f4; }
+  body { background: white; }
+  .shell { width: 100%; padding: 0; }
+  .topbar, .skip, footer { display: none; }
+  main { border: 0; box-shadow: none; border-radius: 0; }
+  .hero, .content { padding-left: 0; padding-right: 0; }
+  a { color: inherit; }
+  section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到内容 / Skip to content</a>
+<div class="shell">
+<header class="topbar">
+<a class="brand" href="../support/index.html"><img src="data:image/png;base64,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" width="42" height="42" alt=""><span>有人叫我 · CallMe</span></a>
+<div class="tools">
+<nav class="nav" aria-label="网站导航 / Navigation">
+<a href="../support/index.html" aria-current="page">技术支持 / Support</a>
+<a href="../privacy/index.html">隐私政策 / Privacy</a>
+</nav>
+<nav class="language-switch" aria-label="语言 / Language"><a href="#zh-Hans" lang="zh-Hans">中文</a><a href="#en" lang="en">EN</a></nav>
+</div></header>
+<main id="content"><article id="zh-Hans" class="language-document" lang="zh-Hans">
+<header class="hero"><p class="eyebrow">CallMe · 使用帮助</p>
+<h1>技术支持</h1><p class="lead">当你沉浸在自己的世界里，帮你留意身边的呼唤。</p><p class="meta">iOS 26 或更高版本</p></header>
+<div class="content"><section><h2>如何开始倾听？</h2><p>在“称呼”和“关键词”中添加需要检测的内容，选择识别语言。阅读并同意协议后，在首页点击“开始倾听”，允许麦克风权限。停止后不会自动重新开启。</p></section>
+<section><h2>语言模型需要下载吗？</h2><p>普通话和英语无需下载。其他支持语言可在“设置 → 离线模型”中安装语言模型；首次安装需要联网。识别语言列表以设备实际支持的语言为准。</p></section>
+<section><h2>姓名或关键词没有识别到怎么办？</h2><p>确认对应功能和规则已开启、识别语言与说话语言一致。可添加常用昵称、同音别名或口语短语，修改后重新开始倾听。噪声、距离和麦克风遮挡会影响识别。</p></section>
+<section><h2>切换到后台还能倾听吗？</h2><p>系统允许麦克风继续工作时，姓名和关键词可在后台检测；附近呼喊仅在前台检测。来电、音频中断或强制退出可能停止倾听，需要检查状态并重新开始。 附近呼喊只写入倾听记录，不触发通知或持续提醒。</p></section>
+<section><h2>持续提醒和普通通知有什么区别？</h2><p>两者分别设置。持续提醒开启时，姓名或关键词命中后先显示提醒弹框或锁屏、灵动岛卡片；手动取消提醒或结束倾听后，再按普通通知设置发送通知。响铃时长到期只停止声音，卡片保留至手动关闭或系统结束。</p></section>
+<section><h2>没有声音或震动怎么办？</h2><p>检查 App 中的声音开关，以及 iPhone 的通知权限、通知声音、静音、专注模式和触觉设置。声音与震动跟随系统设置；系统可能限制提醒的播放或显示。</p></section>
+<section><h2>如何更换或导入铃声？</h2><p>在“设置 → 持续提醒 → 铃声”中选择声音，点击即可试听，也可导入少于 30 秒、最多 20 MB 的音频。普通通知使用单独的提示音设置，不提供音频导入。</p></section>
+<section><h2>如何删除记录或撤回同意？</h2><p>在记录页面删除事件，或在设置中清空历史、清空全部本地数据。通过“设置 → 协议与隐私”撤回同意会立即停止倾听；已有规则和记录仍可查看或删除。系统权限需在 iPhone 设置中单独管理。</p></section>
+<section><h2>联系我们</h2>
+<div class="contact"><p>如果您遇到BUG、用户体验及隐私问题可联系我们</p>
+<p><a href="mailto:secsnowteam@gmail.com">secsnowteam@gmail.com</a></p>
+<p>请写明 App 版本、iPhone 型号、iOS 版本、识别语言、问题出现的步骤及提示。请勿发送周围人的录音或无关的敏感资料。</p></div>
+<a class="page-link" href="../privacy/index.html#zh-Hans">隐私政策</a></section></div></article>
+<article id="en" class="language-document" lang="en">
+<header class="hero"><p class="eyebrow">CallMe · Help</p>
+<h1>Support</h1><p class="lead">Stay focused while we listen for someone calling you.</p><p class="meta">iOS 26 or later</p></header>
+<div class="content"><section><h2>How do I start listening?</h2><p>Add the names and phrases to detect in Names and Keywords, then choose a recognition language. Read and accept the agreement, tap Start listening on Home and allow microphone access. Listening does not restart automatically after stopping.</p></section>
+<section><h2>Do I need to download a language model?</h2><p>Mandarin and English need no download. Install models for other supported languages under Settings → Offline models; the first installation requires internet access. The recognition language list reflects what your device supports.</p></section>
+<section><h2>What if a name or keyword is missed?</h2><p>Check that the feature and rule are enabled and that the recognition language matches the spoken language. Add nicknames, phonetic aliases or spoken variants, then restart listening. Noise, distance and a covered microphone affect recognition.</p></section>
+<section><h2>Does listening continue in the background?</h2><p>Names and keywords can be detected in the background while the system allows microphone capture. Nearby shouts are detected only while the app is active. Calls, audio interruptions or force quitting may stop listening; check the status and restart. Nearby shout candidates are recorded in History and do not trigger notifications or sustained reminders.</p></section>
+<section><h2>How do sustained reminders and regular notifications differ?</h2><p>They have separate settings. With sustained reminders enabled, a name or keyword match first shows an alert or a Lock Screen/Dynamic Island card. After you cancel the reminder or end listening, a regular notification follows according to its settings. The ringing limit stops only the sound; the card stays until you close it or the system ends it.</p></section>
+<section><h2>Why is there no sound or vibration?</h2><p>Check the app’s sound switches and your iPhone’s notification permission, notification sounds, Silent mode, Focus and haptic settings. Sound and vibration follow system settings; the system may restrict alert playback or display.</p></section>
+<section><h2>How do I change or import a ringtone?</h2><p>Choose a sound in Settings → Sustained reminders → Ringtone and tap it to preview. You can import audio shorter than 30 seconds and up to 20 MB. Regular notifications have separate sound settings and do not offer audio import.</p></section>
+<section><h2>How do I delete records or withdraw consent?</h2><p>Delete events in History, or clear history or all local data in Settings. Withdraw consent under Settings → Terms and privacy to stop listening immediately. Existing rules and records remain available to view or delete. Manage system permissions separately in iPhone Settings.</p></section>
+<section><h2>Contact us</h2>
+<div class="contact"><p>Contact us if you encounter bugs, usability issues or privacy concerns.</p>
+<p><a href="mailto:secsnowteam@gmail.com">secsnowteam@gmail.com</a></p>
+<p>Include the app version, iPhone model, iOS version, recognition language, steps to reproduce and any displayed message. Do not send recordings of people around you or unrelated sensitive information.</p></div>
+<a class="page-link" href="../privacy/index.html#en">Privacy Policy</a></section></div></article></main>
+<footer>© 2026 CallMe · <a href="mailto:secsnowteam@gmail.com">secsnowteam@gmail.com</a></footer>
+</div>
+</body>
+</html>
